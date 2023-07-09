@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = Math.min(...arr); //스프레드 연산자 쓰면 arr[0], arr[1]... & 최댓값 함수는 Math.max
+        return answer;
+      }
+
+      let arr = [5, 1, 7, 3, 9];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
