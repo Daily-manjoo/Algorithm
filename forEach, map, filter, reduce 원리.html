@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            //forEach, map, filter, reduce 작동 원리(전부 고차함수, 콜백함수 전달받음)
+
+
+            //forEach: 두 개의 인자를 받음, for 반복문 대신 사용
+            a=[10, 11, 12, 13, 14, 15];
+            a.forEach(function(v, i){ 
+                console.log(v, i, this)
+            }, [1, 2]); // 1, 2는 this에 사용
+
+            //map: 요소들을 이용해 새로운 배열을 생성, 하지만 if(v%2==0) return v; 짝수를 리턴해도 배열길이는 동일하니 때문에 나머지는 undefined 나옴
+            a=[10, 11, 12, 13, 14, 15];
+            let answer=a.map(function(v, i){ 
+                return v*v;
+            }); 
+            console.log(answer);
+
+            //filter: map과는 달리 참으로 리턴되는 요소로만 배열을 구성
+            a=[10, 11, 12, 13, 14, 15];
+            let filter=a.filter(function(v, i){ 
+                if(v%2==0) return v;
+            }); 
+            console.log(filter);
+
+            //reduce: 하나의 값을 생성해서 리턴(합을 구할 때)
+            a=[10, 11, 12, 13, 14, 15];
+            let reduce=a.reduce(function(acc, v){ //누적(리턴값)과 value(원본 배열값), 0+10 , 10+11, 21+12...
+                return acc+v;
+            }, 0); //  acc값을 0으로 초기화
+            console.log(reduce);
+        </script>
+    </body>
+</html>
