@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //A인 문자 #으로 바꾸기
+
+      function solution(s){
+        let answer= "";
+        for(let x of s){
+            if(x==="A") answer = answer+"#";
+            else answer = answer + x;
+        }
+
+        return answer;
+      }
+
+      let str="BANANA";
+      console.log(solution(str));  
+
+      // 두번째 방법 (replace 사용하기)
+
+      function solution(s){
+        let answer= s;
+        answer= answer.replace(/A/g, '#'); //global은 전체에서 바꿔줌 /A/만 있다면 처음 하나만 바꿔줌
+        return answer;
+      }
+
+      let word="BANANA";
+      console.log(solution(word));
+    </script>
+  </body>
+</html>
