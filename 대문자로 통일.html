@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //대문자와 소문자가 같이 존재하는 문자열을 입력받아 대문자로 모두 통일하여 출력하는 프로그램을 작성.
+
+      let str = "ItisTimeToStudy";
+
+      function solution(string){
+        let answer = "";
+        for(let x of string){
+            if(x === x.toLowerCase()){
+                answer = answer + x.toUpperCase();
+            }else answer = answer + x;
+        }
+        return answer;
+      }
+
+      console.log(solution(str))
+      
+    </script>
+  </body>
+</html>
