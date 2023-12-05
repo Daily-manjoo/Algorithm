@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //소문자로 된 단어가 입력되면 그 단어의 가운데 문자열을 출력하는 프로그램을 작성. 단어의 길이가 짝수일 경우 가운데 2개의 문자를 출력하시오
+
+      let string = "study";
+      let string2= "good"
+
+      function solution(str){
+        let answer;
+        let mid=Math.floor(str.length/2) //몫 구하기(2.5에서 2로내림, 인덱스 2는 홀수의 정확한 가운데 위치다.)
+        if(str.length%2==1){
+            answer = str.substring(mid, mid+1) // mid+1은 mid 직전까지
+        }else{
+            answer = str.substring(mid-1, mid+1) // 짝수는 두개 뽑아냄
+        }
+        return answer;
+      }
+
+      
+      console.log(solution(string2))
+      
+    </script>
+  </body>
+</html>
