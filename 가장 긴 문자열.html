@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //N개의 문자열이 입력되면 그 중 가장 긴 문자열을 출력하는 프로그램을 작성.
+
+      let str = ["teacher", "time", "student", "beautiful", "good"];
+
+      function solution(string){
+        let answer, max=Number.MIN_SAFE_INTEGER;
+        for(let x of string){
+            if(x.length > max){
+                max = x.length; //길이를 저장(참,거짓 구분)
+                answer = x; //해당 길이의 문자열을 저장
+            }
+        }
+        return answer;
+    }
+
+      console.log(solution(str))
+      
+    </script>
+  </body>
+</html>

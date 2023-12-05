@@ -10,9 +10,9 @@
       let str = "ItisTimeToStudy";
 
       function solution(string){
-        let answer = "";
+        let answer = ""; // let answer= s.toUpperCase(); 로 한번에도 가능
         for(let x of string){
-            if(x === x.toLowerCase()){
+            if(x === x.toLowerCase()){ //
                 answer = answer + x.toUpperCase();
             }else answer = answer + x;
         }
