@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //소문자로 된 한개의 문자열이 입력되면 중복된 문자를 제거하고 출력하는 프로그램을 작성.
+      //제거된 문자열의 각 문자는 원래 문자열의 순서를 유지한다.
+
+      let string = "ksekkset"
+
+      function solution(str){
+        let answer ="";
+        // console.log(str.indexOf("k"))
+        for(let i=0; i<str.length; i++){
+          // console.log(str[i], i, str.indexOf(str[i]))
+          if(str.indexOf(str[i])===i){
+            answer = answer + str[i];
+          }
+        }
+
+        return answer;
+      }
+
+      
+      console.log(solution(string))
+      
+    </script>
+  </body>
+</html>
