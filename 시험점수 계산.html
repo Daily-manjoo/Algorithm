@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+        //시험에서 연속으로 답을 맞히는 경우 가산점을 주기 위해 다음과 같이 점수계산을 하기로 했다. 1번 문제가 맞는 경우 1점으로 계산한다.
+        //앞의 문제에 대해서는 답을 틀리다가 답이 맞는 처음 문제는 1점으로 계산한다. 또한, 연속으로 답이 맞는 경우 두번째 문제는 2점, 세번째는 3점..
+        //K번째 문제는 K점으로 계산한다. 틀린 문제는 0점이고 문제의 채점 결과가 주어졌을 때 총 점수를 계산하는 프로그램을 작성하시오.
+
+    let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0]
+      function solution(arr){
+        let count = 0;
+        let answer = 0;
+        for(let x of arr){
+            if(x===1){
+                count ++; answer = answer + count;
+            }else{
+                count = 0;
+            }
+        } return answer;
+      }
+
+      console.log(solution(arr))
+      
+    </script>
+  </body>
+</html>
