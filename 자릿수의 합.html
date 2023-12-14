@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //N개의 자연수가 입력되면 각 자연수의 자릿수의 합을 구하고, 그 합이 최대인 자연수를 출력하는 프로그램을 작성하시오.
+      //자릿수의 합이 같은 경우 원래 숫자가 큰 숫자를 답으로 합니다.
+      //만약 235와 1234가 동시에 답이 될 수 있다면 1234를 답으로 출력해야 합니다.
+      let arr = ["128, 460, 603, 40, 421, 137, 123"]
+
+      function solution(arr){
+        let answer;
+        let max= Number.MIN_SAFE_INTEGER; //첫번째 값에 큰 값이 들어와야 해서
+        let length = str.length;
+        for(let x of arr){
+            let sum=x.toString().splint('').reduce((a, b)=>a+Number(b), 0) //각 숫자 배열화 후 a~c돌아가면서 a애 누적
+            console.log(sum);
+            if(sum>max){
+                max=sum;
+                answer=x;
+            }
+            else if(sum==max){
+                if(x>answer){
+                    answer=x;
+                }
+            }
+        }
+        return answer;
+      }
+      
+
+      console.log(solution(arr))
+      
+    </script>
+  </body>
+</html>
