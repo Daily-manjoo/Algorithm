@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      //현재 예산으로 최대 몇 명의 학생에게 졸업선물을 사줄 수 있는지 구하는 프로그램을 작성하세요.
+      //선생님은 상품 하나를 50% 할인해서 살 수 있는 쿠폰을 가지고 있습니다. 배송비는 할인에 포함되지 않습니다.
+      //첫번째 줄에 선생님이 현재 예산으로 선물할 수 있는 최대 학생수를 출력합니다.
+      //다시 한번 풀어보기
+      
+      let arr = [[6, 6], [2, 2], [4, 3], [4, 5], [10, 3]];
+
+      function solution(m, product){ //예산과 상품 정보
+        let answer=0; //카운팅
+        let n=product.length; //학생 수
+        product.sort((a, b)=> (a[0]+a[1])-(b[0]+b[1])) //각 상품 가격+배송비
+        console.log(product);
+        for(let i=0; i<n; i++){
+            let money=m-(product[i][0]/2+product[i][1]); //남은 돈=전체 예산=상품의 반값 할인+배송비
+            let cnt=1;
+            for(let j=0; j<n; j++){
+                if(j!==i && (product[j][0]+product[j][1])>money) break; //총 비용이 남은 예산보다 크면 break
+                if(j!==i && (product[j][0]+product[j][1])<=money){//i는 할인된 상품이니까 사면 안됨
+                    money= money-(product[j][0]+product[j][1]);
+                    cnt++; //상품을 하나 더 샀으니까
+                } 
+            }
+            answer=Math.max(answer, cnt);
+        }
+
+        return answer;
+      }
+
+      console.log(solution(28, arr));
+
+      
+    </script>
+  </body>
+</html>
