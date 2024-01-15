@@ -1,0 +1,24 @@
+//백준 9498
+//시험 점수를 입력받아 해당 점수내의 성적을 도출하라
+
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+data = Number(input[0]);
+
+function solution(Num){
+    let a = input[0];
+                                                               
+    if(a>=90){
+        console.log("A")
+    } else if(a>=80){
+        console.log("B")
+    } else if(a>=70){
+        console.log("C")
+    } else if(a>=60){
+        console.log("D")
+    } else {
+        console.log("F")
+    }
+}
+
+solution(data);
