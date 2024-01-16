@@ -1,0 +1,15 @@
+//백준 2525
+//첫째 줄에는 현재 시각이, 둘째 줄에는 요리를 하는데 필요한 시간이 분 단위로 주어졌을때 요리가 끝나는 시간을 계산하는 프로그램을 작성하라
+
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+
+let [a, b] = input[0].split(' ').map(Number); //한 줄의 두 개 정수 받기
+let cooking = Number(input[1]);
+
+let totalMinute = a * 60 + b + cooking; //전부 분의 형태로 바꾸기
+totalMinute = totalMinute%1440; //24시간(60*24)의 나머지 구하기
+let hour = parseInt(totalMinute/60); //전체 시간 유지
+let minute = totalMinute%60;
+
+console.log(hour+ " " +minute);
