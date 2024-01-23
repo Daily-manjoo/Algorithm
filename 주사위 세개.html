@@ -1,0 +1,24 @@
+//백준 2480
+//1부터 6까지의 눈을 가진 3개의 주사위를 던져 규칙에 따라 상금을 받는다.
+//1. 같은 눈이 3개 나오면 10,000원(+같은 눈)*1,000원의 상금
+//2. 같은 눈이 2개만 나오면 1,000원+(같은 눈)*100원의 상금
+//3. 모두 다른 눈이 나오면 (가장 큰 눈)*100원의 상금
+//3개 주사위의 나온 눈이 주어질 때 상금을 계산하는 프로그램을 작성하라
+
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+
+let a = Number(input[0].split(' ')[0])
+let b = Number(input[0].split(' ')[1])
+let c = Number(input[0].split(' ')[2])
+
+//세 개의 수가 모두 같은 경우
+if(a==b&&b==c) console.log(10000+a*1000)
+
+//세 개의 수가 같진 않지만 두 개의 수가 같은 경우
+else if(a==b) console.log(1000+a*100);
+else if(a==c) console.log(1000+a*100);
+else if(b==c) console.log(1000+b*100);
+
+//세 개의 수가 다 다른 경우
+else console.log(Math.max(a,b,c)*100);
