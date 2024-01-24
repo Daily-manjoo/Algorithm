@@ -1,0 +1,12 @@
+//백준 2739
+//N을 입력받은 뒤 구구단 N단을 풀력하는 프로그램을 작성하라.
+
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+
+let n = Number(input[0]);
+
+for(let i=1; i<=9; i++){
+    console.log(`${n} * ${i} = ${n*i}`)
+}
+
