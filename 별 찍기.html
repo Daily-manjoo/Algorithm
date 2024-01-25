@@ -1,0 +1,18 @@
+//백준 2438
+//첫째줄부터 N번째 줄까지 차례대로 별을 출력한다.
+
+let fs = require('fs');
+let input = fs.readFileSync('dev/stdin').toString().split('\n')
+
+let n = Number(input[0])
+let result = "";
+
+
+for(let i=0; i<n; i++){
+    for(let j=0; j<=i; j++){ //층만큼 반복
+        result = result + "*"; //현재 행만큼 별 출력
+    }
+    result = result + "\n";
+}
+console.log(result);
+

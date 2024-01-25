@@ -1,0 +1,20 @@
+//백준 15552
+//첫 줄엔 테스트케이스의 갯수가, 그 다음줄부터는 a+b를 더하라.
+
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+
+let testCase = Number(input[0]);
+let answer = "";
+
+for(let t=1; t<=testCase; t++){
+    let data= input[t].split(' ');
+    let a = Number(data[0]);
+    let b = Number(data[1]);
+
+    answer += a + b + '\n'; // answer = answer + a + b + '\n'은 시간초과
+}
+
+console.log(answer);
+
+
