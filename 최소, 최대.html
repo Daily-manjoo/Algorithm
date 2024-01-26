@@ -1,0 +1,21 @@
+//백준 10818
+//N개의 정수가 주어졌을 때 최솟값과 최댓값을 구하는 프로그램을 작성하라
+
+let fs = require('fs');
+let input= fs.readFileSync('dev/stdin').toString().split('\n');
+
+let n = Number(input[0]);
+let arr = input[1].split(' ').map(Number);
+
+// 모든 정수는 -1,000,000보다 크거나 같고 1,000,000보다 작거나 같은 정수이다.
+
+let minValue = Number.MAX_SAFE_INTEGER;
+let maxValue = Number.MIN_SAFE_INTEGER;
+
+for(let i = 0; i < n; i++){
+    if(minValue>arr[i]) minValue = arr[i];
+    if(maxValue<arr[i]) maxValue = arr[i];
+}
+
+console.log(minValue, maxValue);
+

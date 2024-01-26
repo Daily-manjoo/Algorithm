@@ -1,0 +1,20 @@
+//백준 2562
+//9개의 서로 다른 자연수가 주어질 때 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지 구하는 프로그램을 작성하라.
+
+let fs = require('fs');
+let input= fs.readFileSync('dev/stdin').toString().split('\n');
+
+let maxIndex = 0;
+let maxValue = 0;
+
+for(let i = 0; i < 9 ; i++){ //모든 데이터 하나씩 확인
+    let data = Number(input[i]);
+    if(maxValue<data){
+        maxValue = data;
+        maxIndex= i;
+    }
+}
+
+console.log(maxValue);
+console.log(maxIndex+1);
+
