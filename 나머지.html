@@ -1,0 +1,14 @@
+//백준 3052
+//수 10개를 입력받은 뒤 이를 42로 나눈 나머지를 구한다. 그 후 서로 다른 값이 몇 개 있는지 출력하는 프로그램을 작성하라.
+
+let fs = require('fs');
+let input = fs.readFileSync('dev/stdin').toString().split('\n');
+
+let n = input.map(Number);
+let mySet = new Set(); //집합 객체 생성(중복된 원소 허용하지 않음)
+
+for(let i=0; i<10; i++){ //원소 하나씩 확인
+    mySet.add(n[i]%42);
+}
+
+console.log(mySet.size) //원소 개수 출력

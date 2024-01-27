@@ -1,0 +1,25 @@
+//백준 4344
+//케이스마다 전체 평균을 넘는 학생들의 비율을 반올림하여 소수점 셋째자리까지 출력하라
+
+let fs = require('fs');
+let input= fs.readFileSync('dev/stdin').toString().split('\n');
+
+let testCases = Number(input[0]);
+
+for(let t=1; t <=testCases; t++){
+    let data = input[t].split(' ').map(Number);
+    let n= data[0]; //데이터 개수
+    let summary = 0;
+    for(let i=1; i <= n; i++){
+        summary = summary+data[i];
+    }
+    let average = summary/n;
+    let cnt = 0; //평균이 넘는 학생 수 계산
+    for (let i=1; i<=n; i++){
+        if(data[i]>average) cnt = cnt + 1;
+    }
+    console.log(`${(cnt/n*100).toFixed(3)}%`) //소수점 셋째짜리까지
+}
+
+
+
