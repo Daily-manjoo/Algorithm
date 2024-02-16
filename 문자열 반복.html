@@ -1,0 +1,19 @@
+// 백준 2675
+// 문자열 S를 입력받은 후 각 문자를 R번 반복해 새 문자열 P를 만든 후 출력하는 프로그램을 작성하라.
+// 예시는 4XYZ -> XXXXYYYYZZZZ
+
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+
+let testCase = Number(input[0]);
+
+for(let i= 1; i <= testCase; i++){
+    let [r, s] = input[i].split(" ");
+    let result = "";
+
+    for(let j = 0; j <= s.length; j++){
+        result = result + s.charAt(j).repeat(r);
+    }
+    console.log(result);
+}
+
