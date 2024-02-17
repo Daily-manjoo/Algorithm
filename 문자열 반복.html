@@ -7,11 +7,15 @@ let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
 let testCase = Number(input[0]);
 
+// 한 줄씩 입력받기
 for(let i= 1; i <= testCase; i++){
+    //r = 반복횟수, s = 문자열
     let [r, s] = input[i].split(" ");
     let result = "";
 
+    // 현재 문자열의 각 문자를 하나씩 확인하며
     for(let j = 0; j <= s.length; j++){
+        // r번 반복한 문자열을 뒤에 이어 붙이기 
         result = result + s.charAt(j).repeat(r);
     }
     console.log(result);
